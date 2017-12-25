@@ -119,7 +119,7 @@ function deleteAlbum(req, res){
 }
 
 function uploadImage(req, res){
-    var albumId = req.params.albumId;
+    var albumId = req.params.id;
     var file_name ='No subido...';
 
     if(req.files){
