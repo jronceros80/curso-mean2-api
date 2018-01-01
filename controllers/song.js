@@ -13,7 +13,7 @@ var Song = require('../models/song');
 function getSong(req, res){
     var songId = req.params.id;
 
-    Song.find(songId).populate({path: 'album'}).exec((err, song)=>{
+    Song.findById(songId).populate({path: 'album'}).exec((err, song)=>{
         if(err){
             res.status(500).send({ message: 'Error en el servidor'});
         }else{
@@ -111,7 +111,7 @@ function deleteSong(req, res){
 }
 
 function uploadFile(req, res){
-    var songId = req.params.songId;
+    var songId = req.params.id;
     var file_name ='No subido...';
 
     if(req.files){
