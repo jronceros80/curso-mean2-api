@@ -1,13 +1,10 @@
 'use strict'
 
-//Modulos
+// Modulos
 var fs = require('fs');
 var path = require('path');
-var mongoosePaginate = require('mongoose-pagination');
 
-//Modelos
-var Artist = require('../models/artist');
-var Album = require('../models/album');
+// Modelos
 var Song = require('../models/song');
 
 function getSong(req, res){

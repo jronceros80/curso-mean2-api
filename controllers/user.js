@@ -1,17 +1,17 @@
 'use strict'
 
-//Modulos
+// Modulos
 var bcrypt = require('bcrypt-nodejs'); 
 var fs = require('fs');
 var path = require('path');
 
-//modelos
+// Modelos
 var User = require('../models/user');
 
-//servicios
+// Servicios
 var jwt = require('../services/jwt');
 
-//acciones
+// Acciones
 function pruebas(req, res){
     res.status(200).send({
         message: 'Probando el controlador de usuarios y la accion pruebas',
@@ -20,13 +20,13 @@ function pruebas(req, res){
 }
 
 function saveUser(req, res){
-    //Creamos el objeto usuario
+    // Creamos el objeto usuario
     var user = new User();
 
-    //Regorrer parametros peticion
+    // Regorrer parametros peticion
     var params = req.body;
 
-    //Con los datos de la request construimos el objeto usuario
+    // Con los datos de la request construimos el objeto usuario
     if(params.name && params.surname && params.email && params.password){
         user.name = params.name;
         user.surname = params.surname;

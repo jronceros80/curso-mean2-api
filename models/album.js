@@ -11,5 +11,5 @@ var AlbumSchema = Schema({
     artist: {type: Schema.ObjectId, ref:'Artist'}
 });
 
-//Esto es paa utilizar el fichero desde cualquier parte de la aplicacion
+// Esto es para utilizar el fichero desde cualquier parte de la aplicacion
 module.exports = mongoose.model('Album', AlbumSchema);

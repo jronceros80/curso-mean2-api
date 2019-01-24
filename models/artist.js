@@ -9,5 +9,5 @@ var ArtistSchema = Schema({
     image: String
 });
 
-//Esto es paa utilizar el fichero desde cualquier parte de la aplicacion
+// Esto es para utilizar el fichero desde cualquier parte de la aplicacion
 module.exports = mongoose.model('Artist', ArtistSchema);

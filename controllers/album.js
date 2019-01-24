@@ -3,18 +3,15 @@
 //Modulos
 var fs = require('fs');
 var path = require('path');
-var mongoosePaginate = require('mongoose-pagination');
 
 //Modelos
-var Artist = require('../models/artist');
 var Album = require('../models/album');
 var Song = require('../models/song');
 
-
-function getAlbum(req, res){
+function getAlbum(req, res) {
     var albumId = req.params.id;
 
-    Album.findById(albumId).populate({path: 'artist'}).exec((err, album)=>{
+    Album.findById(albumId).populate({path: 'artist'}).exec((err, album)=> {
         if(err){
             res.status(500).send({ message: 'Error en la peticion'});
         }else{

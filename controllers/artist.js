@@ -3,7 +3,6 @@
 //Modulos
 var fs = require('fs');
 var path = require('path');
-var mongoosePaginate = require('mongoose-pagination');
 
 //Modelos
 var Artist = require('../models/artist');

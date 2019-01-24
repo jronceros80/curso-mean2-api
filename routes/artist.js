@@ -2,7 +2,7 @@
 
 var express = require('express');
 var ArtistController = require('../controllers/artist');
-var api = express.Router(); //permite hacer get, post,put..etc
+var api = express.Router(); // Permite hacer get, post,put..etc
 var md_auth = require('../middlewares/aunthenticated');
 
 var multipart = require('connect-multiparty');

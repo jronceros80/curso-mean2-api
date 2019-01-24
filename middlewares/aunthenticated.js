@@ -11,14 +11,14 @@ exports.ensureAuth = function(req, res, next){
         });
     }
 
-    //recuperamos el token sustituyendo las comillas simples y dobles que vienen en el inicio y fin del token
-    //por un espacio en blanco
+    // Recuperamos el token sustituyendo las comillas simples y dobles que vienen en el inicio y fin del token
+    // por un espacio en blanco
     var token = req.headers.authorization.replace(/['"]+/g, '');
 
     try {
         var payload = jwt.decode(token, secret);
 
-        //verificamos que el token no este caducado
+        // Verificamos que el token no este caducado
         if(payload.exp <= moment().unix()){
             return res.status(404).send({message: 
                 'el token ha expirado'
@@ -30,9 +30,9 @@ exports.ensureAuth = function(req, res, next){
         });
     }
 
-    //añadimos a la request todos los datos del usuario
+    // Añadimos a la request todos los datos del usuario
     req.user = payload;
 
-    //esto es para salir del middleware
+    // Esto es para salir del middleware
     next();
 };
